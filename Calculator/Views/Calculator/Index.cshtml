@@ -1,0 +1,54 @@
+﻿@using Calculator.Models
+@model IEnumerable<CalculationModel>
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+<input type="text" id="operand1" placeholder="Cislo 1">
+<input type="text" id="operand2" placeholder="Cislo 2">
+
+<select id="operation">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+
+<button id="calculate">Calculate</button>
+
+<h3>Result: <span id="result"></span></h3>
+
+<h3>Calculation History:</h3>
+<ul id="history"></ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Load history on page load
+        $.getJSON('/Calculator/GetHistory', function (data) {
+            updateHistory(data);
+        });
+
+        // Handle "Calculate" button click
+        $('#calculate').click(function () {
+            var operand1 = $('#operand1').val();
+            var operand2 = $('#operand2').val();
+            var operation = $('#operation').val();
+
+            $.post('/Calculator/Calculate', { operand1: operand1, operand2: operand2, operation: operation }, function (data) {
+                $('#result').text(data.result);
+                updateHistory(data.history);
+            });
+        });
+
+        // Update the history list
+        function updateHistory(history) {
+            $('#history').empty();
+            $.each(history, function (index, item) {
+                $('#history').append('<li>' + item.Operand1 + ' ' + item.Operation + ' ' + item.Operand2 + ' = ' + item.Result + '</li>');
+            });
+        }
+    });
+</script>
