@@ -148,6 +148,8 @@
     <Compile Include="Controllers\CalculatorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\CalculatorDbContext.cs" />
+    <Compile Include="Data\Repositories\CalculationLogRepository.cs" />
+    <Compile Include="Data\Repositories\ICalculationLogRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,6 +162,7 @@
     <Compile Include="Models\CalculationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CalculationService.cs" />
+    <Compile Include="Services\ICalculationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

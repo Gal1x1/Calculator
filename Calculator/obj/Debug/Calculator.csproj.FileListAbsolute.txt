@@ -92,7 +92,6 @@ C:\Users\admin\source\repos\Calculator\bin\ru\System.Web.Razor.resources.dll
 C:\Users\admin\source\repos\Calculator\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\admin\source\repos\Calculator\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\admin\source\repos\Calculator\bin\ru\System.Web.WebPages.Razor.resources.dll
-C:\Users\admin\source\repos\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
 C:\Users\admin\source\repos\Calculator\obj\Debug\Calculator.Migrations.InitialCreate.resources
 C:\Users\admin\source\repos\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
 C:\Users\admin\source\repos\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
